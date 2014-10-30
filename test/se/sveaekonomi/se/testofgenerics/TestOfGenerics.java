@@ -59,15 +59,15 @@ public class TestOfGenerics {
 		assertThat( request, instanceOf(Request.class) );		
 	}
 
-//	// i.e. WebPay.deliverOrder().deliverInvoiceOrder() without orderrows => VariantRequest
-//	@Test
-//	public void testGetRequestWithoutFlagReturnsVariantRequest() {
-//		Builder builder = new Builder();
-//		builder.setRequestFlag(false); 
-//		VariantRequest request = builder.getRequest();		
-//		
-//		assertThat( request, instanceOf(VariantRequest.class) );		
-//	}
+	// i.e. WebPay.deliverOrder().deliverInvoiceOrder() without orderrows => VariantRequest
+	@Test
+	public void testGetRequestWithoutFlagReturnsVariantRequest() {
+		Builder builder = new Builder();
+		builder.setRequestFlag(false); 
+		VariantRequest request = builder.getRequest();		
+		
+		assertThat( request, instanceOf(VariantRequest.class) );		
+	}
 		
 //	// i.e. WebPay.deliverOrder().deliverInvoiceOrder().doRequest() without orderrows => DeliverOrdersResponse (AdminService/DeliverOrders) 
 //	@Test

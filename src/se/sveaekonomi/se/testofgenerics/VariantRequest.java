@@ -1,10 +1,14 @@
 package se.sveaekonomi.se.testofgenerics;
 
 
-public class VariantRequest {
+public class VariantRequest implements Requestable {
 
-	public VariantResponse doRequest() {
-		return new VariantResponse();
-	}
+	public Response doRequest() {
+		return new Response();
+	}	
+	
+//	public VariantResponse doRequest() {
+//		return new VariantResponse();
+//	}
 
 }

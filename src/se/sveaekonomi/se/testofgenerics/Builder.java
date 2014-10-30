@@ -18,7 +18,12 @@ public class Builder {
 
 	// refer to http://stackoverflow.com/questions/450807/how-do-i-make-the-method-return-type-generic
 	public <T extends Requestable> T getRequest() {
-		return (T) new Request();
+		if( this.requestFlag ) {
+			return (T) new Request();
+		}
+		else {
+			return (T) new VariantRequest();
+		}		
 	}
 
 }
