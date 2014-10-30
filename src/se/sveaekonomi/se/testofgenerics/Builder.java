@@ -2,22 +2,21 @@ package se.sveaekonomi.se.testofgenerics;
 
 public class Builder {
 
-	private boolean flag;
+	private boolean requestFlag;
 
 	public Builder() {
-		this.flag = false;
+		this.requestFlag = true;	// i.e. orderrows present in deliverOrderBuilder
 	}
 	
-	public void setFlag(boolean b) {
-		this.flag = b;
+	public void setRequestFlag(boolean b) {
+		this.requestFlag = b;
 	}
 
 	public Request getRequest() {
 		return new Request();
 	}
-	
+
 	public AnotherRequest getAnotherRequest() {
 		return new AnotherRequest();
 	}
-
 }

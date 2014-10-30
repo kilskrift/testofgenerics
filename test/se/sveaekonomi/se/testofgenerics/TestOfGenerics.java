@@ -43,5 +43,34 @@ public class TestOfGenerics {
 		assertThat( object, instanceOf(AnotherResponse.class) );		
 	}		
 	
+	// i.e. WebPay.deliverOrder().deliverInvoiceOrder() with orderrows => Request
+	@Test
+	public void testGetRequestReturnsRequest() {
+		Builder builder = new Builder();
+		Request request = builder.getRequest();		
+		
+		assertThat( request, instanceOf(Request.class) );		
+	}
+
+//	// i.e. WebPay.deliverOrder().deliverInvoiceOrder() without orderrows => VariantRequest
+//	@Test
+//	public void testGetRequestWithoutFlagReturnsVariantRequest() {
+//		Builder builder = new Builder();
+//		builder.setRequestFlag(false); 
+//		VariantRequest request = builder.getRequest();		
+//		
+//		assertThat( request, instanceOf(VariantRequest.class) );		
+//	}
+		
+//	// i.e. WebPay.deliverOrder().deliverInvoiceOrder().doRequest() without orderrows => DeliverOrdersResponse (AdminService/DeliverOrders) 
+//	@Test
+//	public void testVariantResponseType() {
+//		Builder builder = new Builder();
+//		builder.setRequestFlag(false); 
+//		VariantRequest request = builder.getRequest();		
+//		VariantResponse response = request.doRequest();
+//		
+//		assertThat( response, instanceOf(VariantResponse.class) );		
+//	}	
 	
 }
