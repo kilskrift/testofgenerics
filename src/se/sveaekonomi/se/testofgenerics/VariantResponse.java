@@ -1,5 +1,5 @@
 package se.sveaekonomi.se.testofgenerics;
 
-public class VariantResponse {
+public class VariantResponse implements Respondable {
 
 }

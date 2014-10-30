@@ -2,5 +2,5 @@ package se.sveaekonomi.se.testofgenerics;
 
 public interface Requestable {
 
-	public Response doRequest();
+	public <T extends Respondable> T doRequest();
 }

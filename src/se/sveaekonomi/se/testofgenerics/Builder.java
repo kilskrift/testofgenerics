@@ -8,8 +8,9 @@ public class Builder {
 		this.requestFlag = true;	// i.e. orderrows present in deliverOrderBuilder
 	}
 	
-	public void setRequestFlag(boolean b) {
+	public Builder setRequestFlag(boolean b) {
 		this.requestFlag = b;
+		return this;
 	}
 
 	public AnotherRequest getAnotherRequest() {

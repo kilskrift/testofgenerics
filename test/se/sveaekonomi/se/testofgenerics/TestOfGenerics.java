@@ -18,7 +18,7 @@ public class TestOfGenerics {
 
 	@Test
 	public void testFluentResponseType() {
-		Response response = new Builder().getRequest().doRequest();
+		Respondable response = new Builder().getRequest().doRequest();
 		
 		assertThat( response, instanceOf(Response.class) );
 	}		
@@ -64,20 +64,27 @@ public class TestOfGenerics {
 	public void testGetRequestWithoutFlagReturnsVariantRequest() {
 		Builder builder = new Builder();
 		builder.setRequestFlag(false); 
-		VariantRequest request = builder.getRequest();		
+		Requestable request = builder.getRequest();		
 		
 		assertThat( request, instanceOf(VariantRequest.class) );		
 	}
 		
-//	// i.e. WebPay.deliverOrder().deliverInvoiceOrder().doRequest() without orderrows => DeliverOrdersResponse (AdminService/DeliverOrders) 
-//	@Test
-//	public void testVariantResponseType() {
-//		Builder builder = new Builder();
-//		builder.setRequestFlag(false); 
-//		VariantRequest request = builder.getRequest();		
-//		VariantResponse response = request.doRequest();
-//		
-//		assertThat( response, instanceOf(VariantResponse.class) );		
-//	}	
+	// i.e. WebPay.deliverOrder().deliverInvoiceOrder().doRequest() without orderrows => DeliverOrdersResponse (AdminService/DeliverOrders) 
+	@Test
+	public void testVariantResponseType() {
+		Builder builder = new Builder();
+		builder.setRequestFlag(false); 
+		Requestable request = builder.getRequest();		
+		Respondable response = request.doRequest();
+		
+		assertThat( response, instanceOf(VariantResponse.class) );		
+	}	
 	
+	@Test
+	public void testFluentResponseTypeWithoutFlagReturnsVariantRequest() {
+		Respondable response = new Builder().setRequestFlag(false).getRequest().doRequest();
+		
+		assertThat( response, instanceOf(VariantResponse.class) );
+	}		
+		
 }
