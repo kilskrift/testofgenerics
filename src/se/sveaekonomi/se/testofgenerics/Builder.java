@@ -15,5 +15,9 @@ public class Builder {
 	public Request getRequest() {
 		return new Request();
 	}
+	
+	public AnotherRequest getAnotherRequest() {
+		return new AnotherRequest();
+	}
 
 }
