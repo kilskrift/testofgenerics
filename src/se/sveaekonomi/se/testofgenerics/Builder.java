@@ -1,5 +1,10 @@
 package se.sveaekonomi.se.testofgenerics;
 
+import se.sveaekonomi.se.testofgenerics.request.AnotherRequest;
+import se.sveaekonomi.se.testofgenerics.request.Request;
+import se.sveaekonomi.se.testofgenerics.request.Requestable;
+import se.sveaekonomi.se.testofgenerics.request.VariantRequest;
+
 public class Builder {
 
 	private boolean requestFlag;

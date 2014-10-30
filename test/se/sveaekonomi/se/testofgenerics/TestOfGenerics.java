@@ -1,6 +1,15 @@
 package se.sveaekonomi.se.testofgenerics;
 
 import org.junit.Test;
+
+import se.sveaekonomi.se.testofgenerics.request.AnotherRequest;
+import se.sveaekonomi.se.testofgenerics.request.Request;
+import se.sveaekonomi.se.testofgenerics.request.Requestable;
+import se.sveaekonomi.se.testofgenerics.request.VariantRequest;
+import se.sveaekonomi.se.testofgenerics.response.AnotherResponse;
+import se.sveaekonomi.se.testofgenerics.response.Respondable;
+import se.sveaekonomi.se.testofgenerics.response.Response;
+import se.sveaekonomi.se.testofgenerics.response.VariantResponse;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.instanceOf;
 

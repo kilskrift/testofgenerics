@@ -1,4 +1,6 @@
-package se.sveaekonomi.se.testofgenerics;
+package se.sveaekonomi.se.testofgenerics.request;
+
+import se.sveaekonomi.se.testofgenerics.response.VariantResponse;
 
 
 public class VariantRequest implements Requestable {
