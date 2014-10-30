@@ -12,11 +12,13 @@ public class Builder {
 		this.requestFlag = b;
 	}
 
-	public Request getRequest() {
-		return new Request();
-	}
-
 	public AnotherRequest getAnotherRequest() {
 		return new AnotherRequest();
 	}
+
+	// refer to http://stackoverflow.com/questions/450807/how-do-i-make-the-method-return-type-generic
+	public <T extends Requestable> T getRequest() {
+		return (T) new Request();
+	}
+
 }
