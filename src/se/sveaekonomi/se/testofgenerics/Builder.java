@@ -18,6 +18,7 @@ public class Builder {
 	}
 
 	// refer to http://stackoverflow.com/questions/450807/how-do-i-make-the-method-return-type-generic
+	@SuppressWarnings("unchecked")
 	public <T extends Requestable> T getRequest() {
 		if( this.requestFlag ) {
 			return (T) new Request();
