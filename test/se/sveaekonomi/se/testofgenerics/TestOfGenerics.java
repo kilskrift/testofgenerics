@@ -15,50 +15,6 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 
 public class TestOfGenerics {
 
-	// i.e. WebPay.deliverOrder().deliverInvoiceOrder().doRequest() => DeliverOrderResult (WebService/DeliverOrderEU)
-	@Test
-	public void testResponseType() {
-		Builder builder = new Builder();
-		Request request = builder.getRequest();		
-		Response response = request.doRequest();
-		
-		assertThat( response, instanceOf(Response.class) );
-	}
-
-	@Test
-	public void testFluentResponseType() {
-		Respondable response = new Builder().getRequest().doRequest();
-		
-		assertThat( response, instanceOf(Response.class) );
-	}		
-	
-	@Test
-	public void testFluentResponseAsObjectType() {
-		Object object = new Object();
-		object = new Builder().getRequest().doRequest();
-
-		assertThat( object, instanceOf(Response.class) );		
-	}		
-
-	
-	// i.e. WebPay.deliverOrder().deliverCardOrder().doRequest() => ConfirmTransactionResponse (Hosted/confirm)
-	@Test
-	public void testAnotherResponseType() {
-		Builder builder = new Builder();
-		AnotherRequest request = builder.getAnotherRequest();		
-		AnotherResponse response = request.doRequest();
-		
-		assertThat( response, instanceOf(AnotherResponse.class) );
-	}	
-
-	@Test
-	public void testAnotherResponseAsObjectType() {
-		Object object = new Object();
-		object = new Builder().getAnotherRequest().doRequest();
-
-		assertThat( object, instanceOf(AnotherResponse.class) );		
-	}		
-	
 	// i.e. WebPay.deliverOrder().deliverInvoiceOrder() with orderrows => Request
 	@Test
 	public void testGetRequestReturnsRequest() {
@@ -76,7 +32,42 @@ public class TestOfGenerics {
 		Requestable request = builder.getRequest();		
 		
 		assertThat( request, instanceOf(VariantRequest.class) );		
+	}	
+	
+	// i.e. WebPay.deliverOrder().deliverInvoiceOrder().doRequest() => DeliverOrderResult (WebService/DeliverOrderEU)
+	@Test
+	public void testResponseType() {
+		Builder builder = new Builder();
+		Request request = builder.getRequest();		
+		Response response = request.doRequest();
+		
+		assertThat( response, instanceOf(Response.class) );
 	}
+
+	@Test
+	public void testFluentResponseType() {
+		Respondable response = new Builder().getRequest().doRequest();
+		
+		assertThat( response, instanceOf(Response.class) );
+	}		
+		
+	// i.e. WebPay.deliverOrder().deliverCardOrder().doRequest() => ConfirmTransactionResponse (Hosted/confirm)
+	@Test
+	public void testAnotherResponseType() {
+		Builder builder = new Builder();
+		AnotherRequest request = builder.getAnotherRequest();		
+		AnotherResponse response = request.doRequest();
+		
+		assertThat( response, instanceOf(AnotherResponse.class) );
+	}	
+
+	@Test
+	public void testAnotherResponseAsObjectType() {
+		Object object = new Object();
+		object = new Builder().getAnotherRequest().doRequest();
+
+		assertThat( object, instanceOf(AnotherResponse.class) );		
+	}		
 		
 	// i.e. WebPay.deliverOrder().deliverInvoiceOrder().doRequest() without orderrows => DeliverOrdersResponse (AdminService/DeliverOrders) 
 	@Test
