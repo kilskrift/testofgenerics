@@ -14,4 +14,12 @@ public class TestOfGenerics {
 		
 		assertThat( response, instanceOf(Response.class) );
 	}
+	
+	@Test
+	public void testResponseAsObjectType() {
+		Object object = new Object();
+		object = new Builder().getRequest().doRequest();
+
+		assertThat( object, instanceOf(Response.class) );		
+	}		
 }
